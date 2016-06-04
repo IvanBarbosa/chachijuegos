@@ -67,7 +67,7 @@ function getNoticias(){
 			var html="";
 			var referencia;
 			for(i=0;i<3;i++){
-				
+
 				if(i==0){
 					html+='<div class="item active">';
 				}else{

@@ -5,8 +5,8 @@ import requests
 import os
 import json
 
-def extraerDatos():  
-    mensaje = {}  
+def extraerDatos():
+    mensaje = {}
     url = "http://www.3djuegos.com/"
     req = requests.get(url)
     statusCode = req.status_code
@@ -14,7 +14,7 @@ def extraerDatos():
     if statusCode == 200:
         html = BeautifulSoup(req.text, 'html.parser')
         entradas = html.find_all('div',{'class':'nov_main'})
-	
+
     for i,entrada in enumerate(entradas):
 	referencia=entrada.find('a')
 	referencia=format(referencia['href'])
@@ -25,8 +25,8 @@ def extraerDatos():
     return mensaje
 
 
-def extraerContenido(url):  
-    mensaje = {}  
+def extraerContenido(url):
+    mensaje = {}
     req = requests.get(url)
     statusCode = req.status_code
 
