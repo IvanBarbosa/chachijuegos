@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Tus juegos</title>
+		<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+		<link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+		<link href="css/theme-style.css" rel='stylesheet' type='text/css' />
+		<link href="css/newstyles.css" rel='stylesheet' type='text/css' />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8">	
+		<link rel="shortcut icon" type="image/x-icon" href="images/fav-icon.png" />
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+		</script>
+		<!--webfonts-->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Fauna+One' rel='stylesheet' type='text/css'>
+		<!--//webfonts-->
+		<!--requred-js-files-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	        <script src="js/invocation.js"></script>
+		<!--//requred-js-files-->
+	</head>
+
+	<body onload="getNoticias()">
+		<!--start-bg-->
+		<div class="bg">
+			<!--start-container-->
+			<div class="container">
+				<!-- start-header-->
+				<div class="row header">
+					<div class="row">
+						<div class="col-md-6">
+							<!--start-logo-->
+							<!--<div class="well logo">
+								<a href="#"><img src="images/logo.png" title="Flatmate" /></a>
+							</div>-->
+							<!--//End-logo-->
+						</div>
+						<div class="well col-md-6">
+							<div class="login-info well header-right">
+								<a class="login btn-primary" href="index.html">Home</a>
+								<a class="login btn-primary" href="buscador.html">Buscador</a>
+								<a class="login btn-primary" href="favoritos.html">Favoritos</a>
+							</div>
+						</div>
+					</div>
+				</div>
+					<div class="well slide-banner row">
+						<div class="slide-banner-left col-md-8">
+							<span> </span>
+							<h1>Tus chachijuegos de ayer y hoy</h1>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+				</div>
+				
+				<div class="noticias">
+					<div id="myCarousel" class="carousel slide container color_news" data-ride="carousel" >
+						<ol class="carousel-indicators">
+							<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+							<li data-target="#myCarousel" data-slide-to="1"></li>
+							<li data-target="#myCarousel" data-slide-to="2"></li>
+						</ol>
+						<div class="carousel-inner" role="listbox" id="noticias">
+						</div>
+						<!-- Left and right controls -->
+						  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+						    <span class="icon-prev prevnext_buttons" aria-hidden="true"></span>
+						    <span class="sr-only">Previous</span>
+						  </a>
+						  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+						    <span class="icon-next prevnext_buttons" aria-hidden="true"></span>
+						    <span class="sr-only">Next</span>
+						  </a>
+					</div>
+				</div>	
+				<div class="container" id="resultado2"></div>			
+				
+				<!--start-footer-->
+				<div class="footer">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-6 footer-left">
+								<ul>
+									<li><p>Proyecto final de SD realizado por:</p></li>
+									<li><p>Autor1, </p></li>
+									<li><p>Autor2, </p></li>
+									<li><p>Autor3, </p></li>
+									<li><p>Cristina Mateo Gil</p></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--end-footer-->
+	</body>
+</html>
+
