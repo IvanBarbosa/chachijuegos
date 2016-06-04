@@ -141,6 +141,9 @@ def extraerDatos(iniUrl, finUrl):
                 if (fecha != None):
                     fecha = fecha.getText()
 
+		if (puntuacion == None):
+                    puntuacion="5"
+
                 mensaje.append({'titulo': titulo.encode("utf-8"), 'descripcion' : descripcion.encode("utf-8"), 'fecha': fecha.encode("utf-8"), 'puntuacion': puntuacion.encode("utf-8"), 'plataforma':plat.encode("utf-8"), 'imagen':imagen})
         else:
             break
