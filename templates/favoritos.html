@@ -2,12 +2,11 @@
 <html>
 	<head>
 		<title>Tus juegos</title>
-		<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
-		<link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
-		<link href="css/theme-style.css" rel='stylesheet' type='text/css' />
+		<link href="{{url_for('static', filename='css/bootstrap.min.css')}}" rel='stylesheet' type='text/css' />
+		<link href="{{url_for('static', filename='css/theme-style.css')}}" rel='stylesheet' type='text/css' />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta charset="utf-8">
-		<link rel="shortcut icon" type="image/x-icon" href="images/fav-icon.png" />
+		link rel="shortcut icon" type="image/x-icon" href="{{url_for('static', filename='images/fav-icon.png')}}" />
 		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 		</script>
 		<!--webfonts-->
@@ -15,8 +14,8 @@
 		<link href='http://fonts.googleapis.com/css?family=Fauna+One' rel='stylesheet' type='text/css'>
 		<!--//webfonts-->
 		<!--requred-js-files-->
-	    <script src="js/jquery.min.js"></script>
-	    <script src="js/bootstrap.min.js"></script>
+	    <script src="{{url_for('static', filename='js/jquery.min.js')}}"></script>
+		<script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
 		<!--//requred-js-files-->
 	</head>
 
@@ -32,9 +31,9 @@
 						</div>
 						<div class="well col-md-6">
 							<div class="login-info well header-right">
-								<a class="login btn-primary" href="index.html">Home</a>
-								<a class="login btn-primary" href="buscador.html">Buscador</a>
-								<a class="login btn-primary" href="favoritos.html">Favoritos</a>
+								<a class="login btn-primary" href="/">Home</a>
+								<a class="login btn-primary" href="/buscador">Buscador</a>
+								<a class="login btn-primary" href="/favoritos">Favoritos</a>
 							</div>
 						</div>
 					</div>

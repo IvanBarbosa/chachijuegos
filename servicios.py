@@ -60,6 +60,10 @@ def cargapag():
 def cargabusca():
     return render_template('buscador.html')
 
+@app.route("/favoritos")
+def cargafavs():
+    return render_template('favoritos.html')
+
 @app.route("/devolverjuegos/<string:plataforma>/<string:genero>/<string:orden>",methods=['GET','OPTIONS'])
 @crossdomain(origin='*')
 def devolverJuegos(plataforma,genero,orden):
