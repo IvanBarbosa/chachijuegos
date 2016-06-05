@@ -112,39 +112,56 @@ def combinaciones(pla, gen, orden):
 
 def extraerDatos(iniUrl, finUrl):
     mensaje = []
-    for i in range(0,maxPages):
-        url = iniUrl + str(i) + finUrl
-        req = requests.get(url)
-        statusCode = req.status_code
 
-        if statusCode == 200:
-            html = BeautifulSoup(req.text, 'html.parser')
-            entradas = html.find_all('table',{'class':'tb100 fftit'})
+    url = iniUrl + "0" + finUrl
+    req = requests.get(url)
 
-            for i,entrada in enumerate(entradas):
-                titulo = entrada.find('a', {'class' : 's18'}).getText()
-                descripcion = entrada.find('p', {'class' : 's13 c4 mar_t6 mar_t4 lh17'}).getText()
-                fecha = entrada.find('b')
-                puntuacion = entrada.find('div', {'class' : 'val_cuadrado_gris fr mar_l16 mar_r2'})
-                plat = entrada.find('span', {'class' : 'plats bg_c4c mar_r4 dib mar_t8'})
-                imagen = entrada.find('img')
-                imagen = format(imagen['src'])
+    statusCode = req.status_code
+    if statusCode == 200:
 
-                if (plat != None):
+        html = BeautifulSoup(req.text)
+        entradas = html.find_all('tr')
+
+        for i,entrada in enumerate(entradas):
+            if(entrada.find('a', {'class' : 's18'}) == None):
+                continue
+            titulo = entrada.find('a', {'class' : 's18'}).getText()
+
+            descripcion = entrada.find('p', {'class' : 's13 c4 mar_t6 mar_t4 lh17'}).getText()
+            fecha = entrada.find('b')
+            puntuacion = entrada.find('div', {'class' : 'val_cuadrado_gris fr mar_l16 mar_r2'})
+            plat = entrada.find('span', {'class' : 'plats bg_c4c mar_r4 dib mar_t8'})
+            imagen = entrada.find('img')
+            imagen = format(imagen['src'])
+
+
+            if (plat != None):
                     plat = plat.getText()
-                else:
-                    plat = ""
+            else:
+                plat = "PC"
 
-                if (puntuacion != None):
-                    puntuacion = puntuacion.getText()
+            if (puntuacion != None):
+                puntuacion = puntuacion.getText()
+            else:
+                puntuacion="-"
+            if (fecha != None):
+                fecha = fecha.getText()
+            else:
+                fecha = "Sin fecha"
 
-                if (fecha != None):
-                    fecha = fecha.getText()
+            mensaje.append({'titulo': titulo.encode("utf-8"), 'descripcion' : descripcion.encode("utf-8"), 'fecha': fecha.encode("utf-8"), 'puntuacion': puntuacion.encode("utf-8"), 'plataforma':plat.encode("utf-8"), 'imagen':imagen})
 
-		if (puntuacion == None):
-                    puntuacion="5"
-
-                mensaje.append({'titulo': titulo.encode("utf-8"), 'descripcion' : descripcion.encode("utf-8"), 'fecha': fecha.encode("utf-8"), 'puntuacion': puntuacion.encode("utf-8"), 'plataforma':plat.encode("utf-8"), 'imagen':imagen})
         else:
-            break
+            print "Status Code %d" %statusCode
+
     return mensaje
+
+
+
+
+
+
+
+
+
+

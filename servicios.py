@@ -86,3 +86,6 @@ def devolverContenido(url):
     mensaje = extrae_noticias.extraerContenido(url)
     return json.dumps(mensaje)
 
+if __name__ == '__main__':
+    app.run()
+

@@ -40,7 +40,6 @@
 							<div class="login-info well header-right">
 								<a class="login btn-primary" href="/">Home</a>
 								<a class="login btn-primary" href="/buscador">Buscador</a>
-								<a class="login btn-primary" href="/favoritos">Favoritos</a>
 							</div>
 						</div>
 					</div>
@@ -55,27 +54,29 @@
 				</div>
 				</div>
 
-				<div class="noticias">
-					<div id="myCarousel" class="carousel slide container color_news" data-ride="carousel" >
-						<ol class="carousel-indicators">
-							<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-							<li data-target="#myCarousel" data-slide-to="1"></li>
-							<li data-target="#myCarousel" data-slide-to="2"></li>
-						</ol>
-						<div class="carousel-inner" role="listbox" id="noticias">
+				<div class="row" id="estiloNoticias">
+						<div class="noticias">
+						<div id="myCarousel" class="carousel slide container color_news" data-ride="carousel" >
+							<ol class="carousel-indicators">
+								<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+								<li data-target="#myCarousel" data-slide-to="1"></li>
+								<li data-target="#myCarousel" data-slide-to="2"></li>
+							</ol>
+							<div class="carousel-inner" role="listbox" id="noticias">
+							</div>
+							<!-- Left and right controls -->
+							  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+							    <span class="icon-prev prevnext_buttons" aria-hidden="true"></span>
+							    <span class="sr-only">Previous</span>
+							  </a>
+							  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+							    <span class="icon-next prevnext_buttons" aria-hidden="true"></span>
+							    <span class="sr-only">Next</span>
+							  </a>
 						</div>
-						<!-- Left and right controls -->
-						  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-						    <span class="icon-prev prevnext_buttons" aria-hidden="true"></span>
-						    <span class="sr-only">Previous</span>
-						  </a>
-						  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-						    <span class="icon-next prevnext_buttons" aria-hidden="true"></span>
-						    <span class="sr-only">Next</span>
-						  </a>
 					</div>
-				</div>
-				<div class="container" id="resultado2"></div>
+
+					<div class="container text-center" id="resultado2"></div>
 
 				<!--start-footer-->
 				<div class="footer">

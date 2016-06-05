@@ -1214,6 +1214,7 @@ img.mfp-img {
 
 .tamImg{
 	width: 100%;
+	padding-top: 10px;
 }
 
 .panelPuntuacion{
@@ -1236,6 +1237,20 @@ img.mfp-img {
 
 #botonBuscar{
 	width: 120px;
+}
+
+#estiloNoticias{
+	background-color: #04b486;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+
+#resultado2{
+	background-color: #27e1b0;
+	margin-top: 10px;
+	border: 5px solid #6E6E6E;
+	border-radius: 5px;
+	margin-bottom: 10px;
 }
 
 /*-------------------------------- End My styles --------------------------------*/
