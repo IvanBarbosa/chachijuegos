@@ -8,6 +8,8 @@ import json
 maxPages = 20
 codigo = ""
 
+#Función que transforma la eleccion del usuario de la plataforma
+#en su correspondiente en la web en la que se realiza la búsqueda.
 def plataforma(eleccion):
     global codigo
     plat = ''
@@ -61,6 +63,8 @@ def plataforma(eleccion):
 
     return plat
 
+#Función que transforma la eleccion del usuario del género
+#en su correspondiente en la web en la que se realiza la búsqueda.
 def genero(eleccion):
 
     global codigo
@@ -101,6 +105,8 @@ def genero(eleccion):
 
     return gen
 
+#Función que obtiene los juegos en función de la plataforma, el género y el orden
+#dadospor el usuario.
 def combinaciones(pla, gen, orden):
     pla = plataforma(pla)
     gen = genero(gen)
@@ -110,6 +116,7 @@ def combinaciones(pla, gen, orden):
     mensaje = extraerDatos(iniUrl, finUrl)
     return mensaje
 
+#Función que extrae la información relativa a los juegos para ser mostrada posteriormente.
 def extraerDatos(iniUrl, finUrl):
     mensaje = []
 
@@ -155,13 +162,3 @@ def extraerDatos(iniUrl, finUrl):
             print "Status Code %d" %statusCode
 
     return mensaje
-
-
-
-
-
-
-
-
-
-

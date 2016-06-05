@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from flask import Flask
 from flask import request
 import json
@@ -8,7 +10,8 @@ from datetime import timedelta
 from flask import make_response, request, current_app, render_template
 from functools import update_wrapper
 
-
+#Decorador para permitir peticiones desde distintos dominios. Requerido para
+#que el Ajax funcione correctamente.
 def crossdomain(origin=None, methods=None, headers=None,
                 max_age=21600, attach_to_all=True,
                 automatic_options=True):
@@ -52,18 +55,17 @@ def crossdomain(origin=None, methods=None, headers=None,
 
 app = Flask(__name__)
 
+#Ruta de la página principal
 @app.route("/")
 def cargapag():
     return render_template('index.html')
 
+#Ruta del la página de búsqueda
 @app.route("/buscador")
 def cargabusca():
     return render_template('buscador.html')
 
-@app.route("/favoritos")
-def cargafavs():
-    return render_template('favoritos.html')
-
+#Servicio que realiza la búsqueda de los juegos
 @app.route("/devolverjuegos/<string:plataforma>/<string:genero>/<string:orden>",methods=['GET','OPTIONS'])
 @crossdomain(origin='*')
 def devolverJuegos(plataforma,genero,orden):
@@ -71,6 +73,7 @@ def devolverJuegos(plataforma,genero,orden):
     mensaje = patrones.combinaciones(plataforma, genero, orden)
     return json.dumps(mensaje)
 
+#Servicio que devuelve las noticias de la página principal
 @app.route("/devolvernoticias",methods=['GET','OPTIONS'])
 @crossdomain(origin='*')
 def devolverNoticias():
@@ -78,6 +81,7 @@ def devolverNoticias():
     mensaje = extrae_noticias.extraerDatos()
     return json.dumps(mensaje)
 
+#Servicio que devuelve el contenido de las noticias.
 @app.route("/devolvercontenido/<string:url>",methods=['GET','OPTIONS'])
 @crossdomain(origin='*')
 def devolverContenido(url):

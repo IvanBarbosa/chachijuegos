@@ -1,3 +1,4 @@
+//Funcion que recibe los juegos y los muestra en la pagina.
 function getJuegos(){
 	var plataforma=$('input:radio[name=plataforma]:checked').val();
 	var genero=$('input:radio[name=genero]:checked').val();
@@ -57,7 +58,7 @@ function getJuegos(){
 	});
 }
 
-
+//Funcion que coloca las noticias en la web
 function getNoticias(){
 	$.ajax({
 		type:"GET",
@@ -87,7 +88,7 @@ function getNoticias(){
 	});
 }
 
-
+//Funcion que coloca los contenidos de las noticias en la web
 function getContenidoNoticia(input){
 	$.ajax({
 		type:"GET",

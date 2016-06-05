@@ -1,10 +1,13 @@
+# -*- coding: utf-8 -*-
+
 from setuptools import setup
 
-setup(name='YourAppName',
+#Función de setup requerida por Openshift
+setup(name='chachijuegos',
       version='1.0',
-      description='OpenShift App',
-      author='Your Name',
-      author_email='example@example.com',
+      description='Búsqueda de Juegos',
+      author='IACA',
+      author_email='IACA@alum.uca.es',
       url='http://www.python.org/sigs/distutils-sig/',
       install_requires=['Flask==0.10.1', 'beautifulsoup4==4.4.1', 'requests'],
      )

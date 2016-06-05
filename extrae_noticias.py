@@ -5,6 +5,7 @@ import requests
 import os
 import json
 
+#Función que obtiene el título de las noticias
 def getTitulo(url):
     req = requests.get(url)
     statusCode = req.status_code
@@ -23,6 +24,7 @@ def getTitulo(url):
 
     return titulo
 
+#Función que extrae la imagen y el título de las noticias.
 def extraerDatos():
     mensaje = {}
     url = "http://www.3djuegos.com/"
@@ -43,7 +45,7 @@ def extraerDatos():
 
     return mensaje
 
-
+#Función que extrae el contenido de las noticias.
 def extraerContenido(url):
     mensaje = {}
     req = requests.get(url)
