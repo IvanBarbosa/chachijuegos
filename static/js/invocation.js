@@ -5,7 +5,7 @@ function getJuegos(){
 	$.ajax({
 		type:"GET",
 		dataType:"json",
-		url: "http://chachijuegos.pythonanywhere.com/devolverjuegos/"+plataforma+"/"+genero+"/"+orden,
+		url: "http://chachijuegos-esisd.rhcloud.com/devolverjuegos/"+plataforma+"/"+genero+"/"+orden,
 		success:function(data){
 			var html="";
             var labels = [];
@@ -62,7 +62,7 @@ function getNoticias(){
 	$.ajax({
 		type:"GET",
 		dataType:"json",
-		url:"http://chachijuegos.pythonanywhere.com/devolvernoticias",
+		url:"http://chachijuegos-esisd.rhcloud.com/devolvernoticias",
 		success:function(data){
 			var html="";
 			var referencia;
@@ -92,7 +92,7 @@ function getContenidoNoticia(input){
 	$.ajax({
 		type:"GET",
 		dataType:"json",
-		url:"http://chachijuegos.pythonanywhere.com/devolvercontenido/"+input,
+		url:"http://chachijuegos-esisd.rhcloud.com/devolvercontenido/"+input,
 		success:function(data){
 			var html="";
 			html+='<h4>'+data.texto+'</h4>';
