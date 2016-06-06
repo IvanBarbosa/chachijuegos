@@ -61,6 +61,9 @@ def extraerContenido(url):
         texto = html.find('p',{'class':'s16 b fftext c2 lh27'})
         video = html.find('meta',{'itemprop':'contentURL'})
 
+        if (titulo == None):
+            titulo = html.find('p', {'class':'tit_arti_2 fftit'})
+
         if(titulo != None):
             #Texto
             titulo = titulo.getText()
