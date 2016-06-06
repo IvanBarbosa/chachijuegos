@@ -14,6 +14,10 @@ def getTitulo(url):
         html = BeautifulSoup(req.text, 'html.parser')
         titulo = html.find('h1',{'class':'tit_arti_1 fftit3 c3b'})
 
+        if (titulo == None):
+            #La noticia puede ser un análisis
+            titulo = html.find('h1', {'class':'tit_arti_2 fftit'})
+
         if(titulo != None):
             #Texto
             titulo = titulo.getText()
