@@ -57,11 +57,13 @@ app = Flask(__name__)
 
 #Ruta de la página principal
 @app.route("/")
+@crossdomain(origin='*')
 def cargapag():
     return render_template('index.html')
 
 #Ruta del la página de búsqueda
 @app.route("/buscador")
+@crossdomain(origin='*')
 def cargabusca():
     return render_template('buscador.html')
 
