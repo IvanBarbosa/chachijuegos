@@ -16,7 +16,7 @@ def getTitulo(url):
 
         if (titulo == None):
             #La noticia puede ser un análisis
-            titulo = html.find('h1', {'class':'tit_arti_2 fftit'})
+            titulo = html.find('p', {'class':'tit_arti_2 fftit'})
 
         if(titulo != None):
             #Texto
