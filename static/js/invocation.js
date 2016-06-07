@@ -67,7 +67,7 @@ function getNoticias(){
 		success:function(data){
 			var html="";
 			var referencia;
-			for(i=0;i<3;i++){
+			for(i=0;i<4;i++){
 
 				if(i==0){
 					html+='<div class="item active">';
