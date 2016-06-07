@@ -25,7 +25,7 @@ function getJuegos(){
                 labels.push(data[i].titulo);
                 values.push(parseFloat(data[i].puntuacion.replace(',', '.')));
 			});
-            html+='<canvas id="myChart" width="300" height="200"></canvas>';
+            html+='<canvas id="myChart" width="200" height="100"></canvas>';
 			$('#resultado').html(html);
             var ctx = document.getElementById("myChart");
             var myChart = new Chart(ctx, {
