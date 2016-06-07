@@ -41,7 +41,7 @@ def extraerDatos():
         referencia = entradas[0].find_all('div')
         imagen = entradas[0].find_all('img')
 
-        for i in [0,1,2]:
+        for i in [0,1,2,3]:
             ref = format(referencia[i]['data-url'])
             img = format(imagen[i]['src'])
             titulo = getTitulo(ref)
